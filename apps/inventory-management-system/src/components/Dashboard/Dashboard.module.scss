@@ -1,0 +1,445 @@
+.dashboard-container {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+.mapSection {
+  // Add styling for the map section
+  height: 600px;
+  width: 72%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.6);
+  border: 3px solid #ffff;
+  background-color: #f4f4f4;
+  margin: 20px;
+  padding: 10px;
+  z-index: 1;
+  // Other styles as needed...
+}
+
+.recentContent, .exploreContent {
+  // Add styling for the recent content section
+  // Example:
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align to the top */
+  padding: 20px;
+  // Other styles as needed...
+}
+
+.exploreContent {
+  // Add styling for the explore content section
+  // Example:
+  padding: 20px;
+  // Other styles as needed...
+}
+.hiddenTab {
+  display: none;
+}
+.postSection {
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  width: 100%;
+  max-width: 600px; // Limiting the maximum width
+  background: linear-gradient(to bottom, var(--sidebar-bg-color), var(--sidebar-bg-color-darker));
+  color: var(--sidebar-text-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    max-height: 75px;
+    &.expanded {
+      max-height: 500px;  // Adjust this to fit the maximum height when fully expanded
+  }
+}
+
+.moodTextarea {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  resize: none;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  border-bottom: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  position: relative;
+  &:before {
+    content: "How are you feeling right now?"; // Your placeholder text
+    position: absolute;  // Absolutely position it
+    top: 10px;  // Adjust based on your needs
+    left: 10px;  // Adjust based on your needs
+    color: #aaa;  // Placeholder color
+    pointer-events: none;  // Makes sure it's not clickable and doesn't interfere
+    z-index: -1;  // Makes sure it sits behind the actual content
+  }&:focus:before, &[data-content]:before {
+    display: none;
+  }
+  .moodTextarea:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+.moodEnhancers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+button {
+  color: var(--sidebar-text-color);
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+      background-color: #2692eb17;
+  }
+}
+.gifRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.mediaAttachment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  label {
+      margin-right: 10px;
+  }
+
+  input[type="file"] {
+      padding: 5px;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+  }
+}
+
+.characterCountdown {
+  font-size: 10px;
+  color: #7a7a7a;
+  margin-bottom: 5px;
+  text-align: end;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  button {
+    
+    margin-right: auto;
+    padding: 2px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+        background-color: #2692eb;
+    }
+  }
+}
+label{
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 12px;
+}
+.selectBox {
+  
+  padding: 5px;
+  border: none;
+  border-radius: 7px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.postButton {
+  margin-left: 180px;
+  width: 70px;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+      background-color: #2692eb;
+  }
+}
+.sliderNumber {
+  width: 30px;  /* or whatever width you find suitable */
+  text-align: center;  /* to center the number */
+  display: inline-block;  /* to keep it inline with text or other elements */
+}
+@media (max-width: 960px) {
+    .postSection {
+        transform: translateX(-350px); // Adjust this value to control the slide distance
+        transition: transform 0.3s ease-out; // Smooth transition effect
+        width: 50%; // Make the postSection take up only half of its parent container's width
+        max-width: 300px; // Half of the original 600px you had
+        padding: 10px; // Half the padding
+    }
+    .moodTextarea {
+      font-size: 14px; // Reduced font-size
+      padding: 8px; // Adjust padding
+      border: none;
+    }
+  .moodTextarea:focus {
+    outline: none;
+    border: none;
+  }
+}
+.gifPicker {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 500px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: var(--sidebar-hover-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; 
+}
+.gifSearchBar {
+  padding: 10px;
+  margin-bottom: 10px;  // add space between the search bar and GIFs
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.gifGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  // for 2 columns
+  gap: 10px;  // spacing between gifs
+}
+.gifPickerCloseButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: #fff;
+  color: #333;  // font color
+  border: none;
+  border-radius: 50%;  // circle shape
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+/* Scrollbar styles */
+.gifPicker::-webkit-scrollbar {
+  background-color: var(--sidebar-hover-color);
+  width: 8px;
+}
+
+.gifPicker::-webkit-scrollbar-track {
+  background-color: var(--sidebar-hover-color);
+}
+
+.gifPicker::-webkit-scrollbar-thumb {
+  background-color: var(--sidebar-hover-color);
+  border-radius: 4px;
+}
+
+.gifPicker::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.moodTextarea img {
+  width: 100%; 
+  height: auto; 
+  object-fit: contain;
+}
+.separator {
+  margin: 10px 0;
+  border: 0;
+  border-top: 1px solid gray;
+}
+.moodTextarea:focus {
+  outline: none;
+  border: none;
+}
+
+.selectedGifContainer {
+  position: relative;
+  width: 100%; 
+  overflow: hidden; 
+  margin-bottom: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  img {
+    border-radius: 8px;
+    width: 300px;  // Ensure the image takes the full width of the container
+    height: auto; // Automatically adjust the height to maintain aspect ratio
+    max-height: 300px;  // Limit the height to a specific value if necessary
+    //object-fit: contain; 
+    
+  }
+
+  button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+      }
+  }
+}
+
+.moodTextarea::before {
+  content: attr(data-placeholder);
+  display: block;
+  /* Add any styles you want for your placeholder here. Example: */
+  color: #aaa;  // A light gray placeholder text color
+  pointer-events: none;  // Ensures the pseudo-element is not clickable or selectable
+}
+.moodTextarea:empty:before {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 10px;  // Adjust based on your padding and desired position
+  left: 10px;
+  color: #aaa;  // Placeholder text color
+  pointer-events: none;  // Ensures the content is not clickable or selectable
+}
+.placeholder {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  position: absolute;
+  top: 10px;  // Adjust based on your padding and desired position
+  left: 10px;
+  color: #aaa;  // Placeholder text color
+  pointer-events: none;  // Ensures the span is not clickable or selectable
+  z-Index: 2;
+}
+.container {
+  position: relative;
+}
+
+.postContainer {
+  display: flex;
+  align-items: center;
+}
+
+.timer {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  margin-left: 0px; /* adjust as needed */
+  font-size: 12px;
+}
+
+.scrollableContent {
+  overflow-y: auto; /* Enables vertical scrolling */
+  height: calc(100vh - var(--map-height)); /* Adjust height as needed */
+  --map-height: 600px; /* Height of the map */
+}
+
+.tabs {
+  display: flex;
+  justify-content: center; // Center buttons horizontally
+  gap: 0px; // Space between buttons
+  margin-right: 370px;
+}
+
+.tabs button {
+  padding: 10px 0px; // Adjust padding to control button size
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    color: grey; // Default color
+    font-size: 20px; // Adjust font size if needed
+    text-align: center;
+    width: 200px;
+
+  &:hover {
+    background-color: linear-gradient(to bottom, var(--sidebar-bg-color), var(--sidebar-bg-color-darker)); // Assuming you have a primary color variable
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  &.activeTab {
+    color: rgb(0, 0, 0); // Color for active tab
+  }
+
+  &.recentButton, &.exploreButton {
+    background-color: linear-gradient(to bottom, var(--sidebar-bg-color), var(--sidebar-bg-color-darker));
+  }
+}
+
+.myFeedList {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  max-height: 700px; /* Adjust as needed */
+  max-width: 600px;
+  overflow-y: auto; /* Adds vertical scrollbar when needed */
+  margin-left: -350px;
+  
+  /* Centering, if applicable */
+}
+.postItem {
+  flex: 1; /* This allows the post to grow and shrink */
+  min-height: 100px; /* Minimum height of each post */
+  /* Other styles */
+}
+@media (max-width: 600px) {
+  .postItem {
+    flex: 0 1 auto; /* Do not grow, but allow shrink */
+    max-height: 150px; /* Maximum height of each post on small screens */
+  }
+}
+@media (max-width: 68px) { /* Adjust breakpoint as needed */
+  .recentContent {
+    justify-content: flex-start; /* Align to the left on smaller screens */
+  }
+}
+.myFeedList::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  background-color: #929292; /* Background of the scrollbar track */
+  border-radius: 15px;
+}
+
+/* Style the handle (thumb) of the scrollbar */
+.myFeedList::-webkit-scrollbar-thumb {
+  background-color: #424242; /* Color of the thumb */
+  border-radius: 5px; /* Rounded corners on the thumb */
+  border: 2px solid #5f5f5f; /* Creates padding around the thumb */
+}
+
+/* Handle on hover */
+.myFeedList::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of thumb on hover */
+}

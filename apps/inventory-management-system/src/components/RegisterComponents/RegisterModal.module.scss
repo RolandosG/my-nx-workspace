@@ -1,0 +1,174 @@
+$register-bg-color: #2c3e50;
+$register-bg-color-darker: #1a242f;
+$register-text-color: #ecf0f1;
+$register-hover-color: #2980b9;
+.registerModal {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  background: var(--register-bg-color); // Changed to CSS variable
+  color: var(--register-text-color); // Changed to CSS variable
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 1200px;
+  height: 600px;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  display: flex;
+  
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  .container {
+    display: flex; // Enable Flexbox layout
+    align-items: flex-start; // Align the top of the columns
+    
+    .column {
+      flex: 1;
+      padding-top: 50px;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+  }
+  
+  }
+  h1 {
+    display:grid;
+    height: 5px;
+
+    text-align: left;
+    
+    font-size: 2em;
+    color: var(--register-text-color);
+  }
+  p, .errorMessage {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1em;
+    color: var(--register-text-color);
+  }
+
+  h3 {
+    text-align: middle;
+    color: var(--register-text-color);
+    font-size: 1.1em;
+  }
+
+  input {
+    display: block;
+    width: 375px;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid #000000;
+    }
+
+    &::placeholder {
+      font-size: 0.9em;
+      color: #999999;
+    }
+  }
+
+  button {
+    padding: 10px 20px;  // Modifying padding to make the button "normal"
+    max-width: 100px;  // Restrict maximum width
+    margin: auto; 
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #68686865;
+    }
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #000000;
+
+    &:hover {
+      color: #000000;
+    }
+  }
+}
+
+// Container holding the terms and submit button
+.termsAndSubmitContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;  // Align items to the right
+  justify-content: flex-end;  // Push items to the bottom
+  height: 100%; // Take full height of parent
+  
+}
+
+.termsAgreement {
+
+  display: flex;
+  align-items: center; // Vertically align the text and the checkbox
+  .termsText {
+    margin: 5px; // Add some margin around the text and checkbox
+  
+  }
+  .termsCheckbox {
+    margin: 0 -130px; // Add some margin around the text and checkbox
+  }
+  .termsLink
+  {
+    color: #007bff;
+    text-decoration: underline;
+  }
+}
+
+.submitButton {
+  margin-top: 0px; // Add some top margin to separate it from the terms
+}
+.formControl {
+  margin: 16px 0;
+  margin-left: -18px; // Adjust this value to align it with other elements
+  width: 100%;
+  max-width: 410px;
+  
+}
+.successModal {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  background: var(--register-bg-color); // Changed to CSS variable
+  color: var(--register-text-color); // Changed to CSS variable
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  height: 200px;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  display: flex;
+
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}

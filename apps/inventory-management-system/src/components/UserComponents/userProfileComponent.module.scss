@@ -1,0 +1,229 @@
+$active-tab-color: #007bff;
+$inactive-tab-color: #ccc;
+$font-family: 'Arial', sans-serif;
+$sidebar-bg-color: #FFFFFF;  // Very light gray for sidebar
+$sidebar-bg-color-darker: #FFFFFF;  // A slightly darker gray for contrast
+$sidebar-text-color: #333333;  // Dark text for better readability
+$sidebar-hover-color: #dddddd;  // Sidebar link hover color similar to link color
+$button-bg-color: #007bff;  // Original active tab blue
+$button-bg-color-darker: #ff7f00;  // Complementary orange
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+
+  .followInfo {
+    display: flex;
+    align-items: center;
+
+    .following, .followers {
+      font-family: 'Arial', sans-serif;
+      margin-left: 10px; // Space out the following and followers
+    }
+  }
+}
+
+
+.postContainer {
+  width: 100%;
+  max-width: 1200px; // Adjust the max-width as needed
+  margin: 0 auto; // This centers the container
+  padding: 20px;
+  box-sizing: border-box;
+
+  h1 {
+    text-align: center; // Center the title
+  }
+}
+h1 {
+  font-family: 'Arial', sans-serif;
+}
+.buttonsContainer {
+  display: flex;
+  justify-content: space-around; // This will distribute space evenly around the buttons
+  
+  button {
+    color: linear-gradient(to bottom, var(--sidebar-bg-color), var(--sidebar-bg-color-darker));
+    padding: 10px 20px; // Adjust padding to increase the button size
+    border-radius: 5px; // This will give the button rounded corners
+    width: 200px; // This will set the button width to 200px
+    text-align: center; // Centers the text inside the button
+    transition: background-color 0.3s, color 0.3s; // Smooth transition for hover effect
+    
+    &:hover {
+      background-color: #007bff; // Color when button is hovered
+      color:  $sidebar-text-color;// Text color when button is hovered
+      cursor: pointer;
+    }
+
+    &.active {
+      font-weight: bold;
+      color: linear-gradient(to bottom, var(--sidebar-bg-color), var(--sidebar-bg-color-darker));
+      border-bottom: 2px solid #007bff; // Solid underline effect
+    }
+  }
+}
+
+.likedMoments {
+  max-height: 700px; // Adjust this value based on your layout
+  overflow-y: auto; // Enables vertical scrolling
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, var(--sidebar-bg-color), var(--sidebar-bg-color-darker));
+  ul {
+    list-style: none; // Removes bullet points
+    padding: 0; // Adjust padding as needed
+    margin: 0; // Adjust margin as needed
+  }
+  /* Custom Scrollbar Styles */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+.userPosts {
+  width: 100%; // Full width
+  max-width: 600px; // Or any max-width you prefer
+  margin: auto; // This will center the content
+  
+  ul {
+    padding: 0;
+    list-style: none;
+    
+    li {
+      margin-bottom: 10px; // Space out the items
+    }
+  }
+}
+
+.commonCardStyle {
+  background: linear-gradient(to bottom, var(--sidebar-bg-color), var(--sidebar-bg-color-darker));
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+  width: 500px;
+  font-family: 'Arial', sans-serif;
+  margin: 10px auto;
+  }
+  
+  .userInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // Two columns of equal width
+    grid-template-rows: auto auto auto auto; // Four rows, height set automatically
+    grid-template-areas: 
+      "userName date"
+      "userDescription userDescription"
+      "userGif userGif"
+      "userEmotion likesContainer";
+    grid-gap: 10px;
+
+    .userTop {
+      display: flex;
+      justify-content: space-between; 
+    }
+  
+    .userName {
+      grid-area: userName;
+      font-size: 15px;
+      text-decoration: underline;
+      justify-self: start;
+    }
+  
+    .userDescription {
+      grid-area: userDescription;
+      font-size: 14px;
+      text-align: left;
+    }
+    .userGif {
+      grid-area: userGif;
+      font-size: 14px;
+      
+    }
+    .userEmotion {
+      grid-area: userEmotion;
+      font-size: 14px;
+    }
+  
+    .userMood {
+      grid-area: userMood;
+      font-size: 14px;
+    }
+  
+    .userLocation {
+      font-size: 14px;
+      grid-area: userLocation;
+    }
+  
+    .likesContainer {
+      grid-area: likesContainer;
+      display: flex;
+      align-items: center; /* Vertically aligns the flex items */
+      justify-content: flex-start; /* Horizontal alignment */
+      justify-self: end;
+      .transparentButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  
+    .date {
+      grid-area: date;
+      font-size: 14px;
+      justify-self: end;
+    }
+  }
+  .likesContainer {
+    display: flex;
+    align-items: center; /* Vertically aligns the flex items */
+    justify-content: flex-start; /* Horizontal alignment */
+  }
+  .scrollablePostsContainer {
+    max-height: 700px; // Adjust this value based on your layout
+    overflow-y: auto; // Enables vertical scrolling
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, var(--sidebar-bg-color), var(--sidebar-bg-color-darker));
+  
+    /* Custom Scrollbar Styles */
+    &::-webkit-scrollbar {
+      width: 8px;
+      
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 12px;
+    }
+  
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }

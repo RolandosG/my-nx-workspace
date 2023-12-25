@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+.loginPageWithMap {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh; // Full viewport height
+    background-color: #000000;
+    .mapContainer {
+      width: 50%;
+      height: 100%;
+    }
+  
+    .loginContainer {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .loginPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .leftSection {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    max-width: 100%;
+    
+  }
+  .p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 300px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .leftSection img {
+    max-width: 100%;
+    height: auto;
+    //padding-left: 280px;
+    margin-left: 280px;
+    border-radius: 15%;
+  }
+  
+  .rightSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit; /* Ensure box-sizing is consistent across elements */
+  }
+  
+  /* LoginPage.module.scss */
+  .login-page-container {
+    background-color: #000000; /* Black */
+    min-height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent any internal content from causing scroll */
+    margin-left: -350px;
+   
+  }
+  .siteTitle {
+    color: #fff; // Example color
+    text-align: center;
+    font-size: 2em; // Adjust the size as needed
+    margin-bottom: 20px; // Spacing between the title and the image\
+    margin-left: 270px;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  @media (max-width: 768px) { // Adjust the breakpoint as needed
+    .loginPage {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .leftSection, .rightSection {
+      width: 100%;
+    }
+  
+    .leftSection img, .leftSection p {
+      display: none; // Hide the image and the paragraph on smaller screens
+    }
+  }
+
+  .imageWrapper {
+    border-radius: 25%; /* Adjust for desired curvature */
+    overflow: hidden; /* Ensures that the image corners are clipped */
+    
+    /* Add background, size, and position styles as needed */
+}
+
+.leftSection .imageWrapper img {
+    max-width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    
+    border-radius: 48%; /* Optional, if you want the image itself also to have rounded corners */
+}

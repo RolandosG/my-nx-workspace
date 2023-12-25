@@ -1,0 +1,92 @@
+{
+  "name": "personal-finance-tracker",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/personal-finance-tracker/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/personal-finance-tracker",
+        "index": "apps/personal-finance-tracker/src/index.html",
+        "baseHref": "/",
+        "main": "apps/personal-finance-tracker/src/main.tsx",
+        "tsConfig": "apps/personal-finance-tracker/tsconfig.app.json",
+        "assets": [
+          "apps/personal-finance-tracker/src/favicon.ico",
+          "apps/personal-finance-tracker/src/assets"
+        ],
+        "styles": ["apps/personal-finance-tracker/src/styles.scss"],
+        "scripts": [],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/personal-finance-tracker/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/personal-finance-tracker/src/environments/environment.ts",
+              "with": "apps/personal-finance-tracker/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "personal-finance-tracker:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "personal-finance-tracker:build:development"
+        },
+        "production": {
+          "buildTarget": "personal-finance-tracker:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/personal-finance-tracker/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/personal-finance-tracker/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

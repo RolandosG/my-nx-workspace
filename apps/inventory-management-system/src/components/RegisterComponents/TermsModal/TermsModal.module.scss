@@ -1,0 +1,107 @@
+// Existing styles remain unchanged
+
+// Add these new styles for TermsModal
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); // Semi-transparent background
+  z-index: 1000; // Below the modal but above other content
+  
+}
+
+.termsContent {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+  max-height: 900px;
+  overflow-y: auto;
+  position:absolute;
+  padding: 20px;
+  z-index: 2001; // Above the overlay
+  margin-left: 500px;
+  top: 50px;
+  // ... other styles ...
+}
+
+.termsModalVisible {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 80%; // Consider making it responsive
+  height: auto; // Adjust height as needed
+  max-width: 800px; // Setting a max-width for larger screens
+  padding: 20px;
+  text-align: center;
+  position: fixed; // Fixed position relative to the viewport
+  top: 50%; // Vertically center
+  left: 50%; // Horizontally center
+  transform: translate(-50%, -50%); // Adjust for the modal's own size
+  z-index: 2001; // Ensure it's above other elements
+  overflow-y: auto; // Enable scrolling for long content
+    
+    h1, p {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      margin-bottom: 10px;
+      text-align: left;
+      padding-left: 0;
+      font-size: 1.1em;
+      color: #000000;
+    }
+    .termsContent {
+      margin-top: 20px;
+      text-align: left;
+    }
+  }
+  h2 {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 0;
+    font-size: 1.5em;
+    color: #000000;
+  }
+  .termsModalHidden {
+    display: none;
+    // styling for hidden modal
+  }
+  
+  .closeButton {
+    position: absolute;  // Position relative to the termsContent
+    top: 10px;           // 10px from the top of the termsContent
+    right: 10px;         // 10px from the right of the termsContent
+    background: none;
+    border: none;
+    font-size: 2.5em;    // Adjust font size as needed
+    cursor: pointer;
+    color: #444444;      // Adjust color as needed
+    padding: 10px;
+
+  &:hover {
+    color: #000000;    // Adjust hover color as needed
+    border-radius: 0;
+  }
+  }
+  
+  // Styles for a new button that opens the TermsModal
+  
+  .openTermsButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+  }

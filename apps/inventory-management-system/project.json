@@ -1,0 +1,92 @@
+{
+  "name": "inventory-management-system",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/inventory-management-system/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/inventory-management-system",
+        "index": "apps/inventory-management-system/src/index.html",
+        "baseHref": "/",
+        "main": "apps/inventory-management-system/src/main.tsx",
+        "tsConfig": "apps/inventory-management-system/tsconfig.app.json",
+        "assets": [
+          "apps/inventory-management-system/src/favicon.ico",
+          "apps/inventory-management-system/src/assets"
+        ],
+        "styles": ["apps/inventory-management-system/src/styles.scss"],
+        "scripts": [],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/inventory-management-system/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/inventory-management-system/src/environments/environment.ts",
+              "with": "apps/inventory-management-system/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "inventory-management-system:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "inventory-management-system:build:development"
+        },
+        "production": {
+          "buildTarget": "inventory-management-system:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/inventory-management-system/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/inventory-management-system/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

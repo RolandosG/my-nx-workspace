@@ -1,0 +1,13 @@
+.layout {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .dashboard-container {
+    flex-grow: 1;
+    margin-left: 350px;
+  }
+
+  .right-sidebar {
+    width: 20%; // Or however wide you want it
+  }
