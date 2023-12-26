@@ -14,6 +14,6 @@ root.render(
       <RecoilRoot>
         <App />
       </RecoilRoot>
-    </BrowserRouter>
+    </BrowserRouter>  
   </StrictMode>
 );
