@@ -2,15 +2,15 @@
   "name": "@my-nx-workspace/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": { "build": "nx build inventory-management-system --prod"},
+  "scripts": {
+    "build": "nx build inventory-management-system --prod"
+  },
   "private": true,
   "dependencies": {
-    "@element-plus/icons-vue": "^2.1.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.9",
-    "@nx/next": "16.7.4",
     "@sendgrid/mail": "^7.7.0",
     "@swc/helpers": "~0.5.0",
     "@types/geojson": "^7946.0.10",
