@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "nx build inventory-management-system --prod"
+    "start": "node ./dist/apps/inventory-management-system-api/main.js",
+    "postinstall": "npm run build:api",
+    "build:api": "nx build inventory-management-system-api --prod",
+    "build:frontend": "nx build inventory-management-system --prod"
   },
   "private": true,
   "dependencies": {
