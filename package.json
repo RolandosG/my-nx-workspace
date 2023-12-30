@@ -6,7 +6,8 @@
     "start": "node ./dist/apps/inventory-management-system-api/main.js",
     "postinstall": "npm run build:api",
     "build:api": "nx build inventory-management-system-api --prod",
-    "build:frontend": "nx build inventory-management-system --prod"
+    "build:frontend": "nx build inventory-management-system --prod",
+    "heroku-postbuild": "nx build inventory-management-system --prod && nx build inventory-management-system-api --prod"
   },
   "private": true,
   "dependencies": {
