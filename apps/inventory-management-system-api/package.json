@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/app.js",
   "scripts": {
-    "start": "node ./dist/apps/inventory-management-system-api/main.js,
+    "start": "node ./dist/apps/inventory-management-system-api/main.js",
     "build": "tsc",
     "postinstall": "npm run build"
   },
