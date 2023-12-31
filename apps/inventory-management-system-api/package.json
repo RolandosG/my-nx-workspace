@@ -4,7 +4,7 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "node ./dist/apps/inventory-management-system-api/main.js",
-    "build": "tsc",
+    "build": "nx build inventory-management-system-api --prod",
     "postinstall": "npm run build"
   },
   "dependencies": {
