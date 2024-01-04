@@ -6,7 +6,7 @@ import { useAuth } from '../AuthContext';
 import RegisterModal from '../../RegisterComponents/RegisterModal';
 import { useNavigate } from 'react-router-dom';
 import config from '../../../config';
-console.log('Config:', config);
+// console.log('Config:', config);
 interface LoginModalProps {
   isVisible: boolean;
   onClose: () => void;

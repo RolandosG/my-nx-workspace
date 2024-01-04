@@ -267,12 +267,12 @@ useEffect(() => {
     };
     
     webSocket.onopen = () => {
-      console.log("WebSocket connection established.");
+      // console.log("WebSocket connection established.");
       retryCount = 0;
     };
     webSocket.onclose = () => {
       if (retryCount < maxRetries) {
-        console.log(`Connection closed. Retrying in ${retryInterval / 1000} seconds...`);
+        // console.log(`Connection closed. Retrying in ${retryInterval / 1000} seconds...`);
         setTimeout(connectWebSocket, retryInterval);
         retryCount++;
       } else {
