@@ -6,14 +6,14 @@ const WebSocketComponent = () => {
   
   useEffect(() => {
     ws.addEventListener('open', () => {
-      console.log('Connected to WebSocket server');
+      // console.log('Connected to WebSocket server');
     });
     
     ws.addEventListener('message', (event) => {
       const data = JSON.parse(event.data);
       
       if (data.type === 'updateTrending') {
-        console.log('Received trending data:', data.payload);
+        // console.log('Received trending data:', data.payload);
       }
     });
 

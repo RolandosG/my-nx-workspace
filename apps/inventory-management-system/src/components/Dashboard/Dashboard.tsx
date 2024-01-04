@@ -547,7 +547,7 @@ useEffect(() => {
 }, [isLoading, loggedInUserId, fetchMyFeed]);
 
 useEffect(() => {
-  console.log("Updated My Feed Moments:", myFeedMoments);
+  // console.log("Updated My Feed Moments:", myFeedMoments);
 }, [myFeedMoments]);
 
 const handleTabClick = (tabName: string) => {
@@ -646,7 +646,7 @@ useEffect(() => {
 }, [activeTab]);
 
 useEffect(() => {
-  console.log("Current Random Post:", randomPosts);
+  // console.log("Current Random Post:", randomPosts);
 }, [randomPosts]);
 
 const observer = useRef<IntersectionObserver | null>(null);
