@@ -1,6 +1,6 @@
 const config = {
-  apiBaseUrl: 'https://backend-mindworks-061124d94608.herokuapp.com',
-  apiBaseWsUrl: 'wss://backend-mindworks-061124d94608.herokuapp.com',
+  apiBaseUrl: 'https://smbackend-88278ac29518.herokuapp.com',
+  apiBaseWsUrl: 'wss://smbackend-88278ac29518.herokuapp.com',
   };
 
   export default config;
