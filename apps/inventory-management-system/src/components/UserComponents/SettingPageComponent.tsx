@@ -48,7 +48,7 @@ const SettingsPage = () => {
   const handlePasswordChange = async () => {
     
     const token = localStorage.getItem('token');
-    console.log("token", token);
+    // console.log("token", token);
     try {
       if (newPassword !== confirmNewPassword) {
         alert("New passwords do not match. Please enter them again.");

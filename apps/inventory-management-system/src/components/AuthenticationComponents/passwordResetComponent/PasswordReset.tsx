@@ -33,7 +33,7 @@ const ResetPassword = () => {
         setMessage(data.message || 'An error occurred');
       }
     } catch (error) {
-      console.error("Network or fetch error:", error);
+      // console.error("Network or fetch error:", error);
       setMessage('Failed to reset password');
     }
   };

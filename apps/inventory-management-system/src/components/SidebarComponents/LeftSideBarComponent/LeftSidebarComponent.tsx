@@ -82,7 +82,7 @@ const LeftSidebar = () => {
   };
 
   useEffect(() => {
-    console.log('Current user in LeftSidebar:', user);
+    // console.log('Current user in LeftSidebar:', user);
   }, [user]);
 
 

@@ -28,7 +28,7 @@ interface MomentPostComponentProps {
 }
 
 const MomentPostComponent: React.FC<MomentPostComponentProps> = ({ post, handleLikeClick, isLiked }) => {
-  console.log("Is liked:", isLiked, "Post ID:", post._id);
+  // console.log("Is liked:", isLiked, "Post ID:", post._id);
   const [liked, setLiked] = useState(isLiked);
   const [likesCount, setLikesCount] = useState(post.likesCount);
 

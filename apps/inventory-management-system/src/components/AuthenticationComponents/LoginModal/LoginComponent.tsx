@@ -25,7 +25,7 @@ const LoginModal: FC<LoginModalProps> = ({ isVisible, onClose, onSwitchToRegiste
   const { handleLogin } = useAuth();
   const navigate = useNavigate();
   const apiBaseUrl = config.apiBaseUrl;
-  console.log('API Base URL IN LOGIN COMP:', apiBaseUrl);
+  // console.log('API Base URL IN LOGIN COMP:', apiBaseUrl);
   
   const handleResendVerificationClick = () => {
     fetch(`${apiBaseUrl}/resend-verification`, {
@@ -61,7 +61,7 @@ const LoginModal: FC<LoginModalProps> = ({ isVisible, onClose, onSwitchToRegiste
     // console.log("Method: POST");
     // console.log("Headers: Content-Type: application/json");
     // console.log("Body: ", JSON.stringify({ username, password }));
-    console.log('Request URL:', `${apiBaseUrl}/auth/login`);
+    // console.log('Request URL:', `${apiBaseUrl}/auth/login`);
     fetch(`${apiBaseUrl}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -74,11 +74,11 @@ const LoginModal: FC<LoginModalProps> = ({ isVisible, onClose, onSwitchToRegiste
       return res.json();
     })
     .then((data) => {
-      console.log("Received data from API:", data);
+      // console.log("Received data from API:", data);
       setIsLoading(false); // Stop loading indicator
       if (data.success) {  // Check if username and password are correct
         if (data.isEmailVerified) {  // Then check if email is verified
-          console.log("User authenticated");
+          // console.log("User authenticated");
           setIsAuthenticated(true);  // Update the AuthContext
           setToken(data.token);  // Update the token in the context
           localStorage.setItem("token", data.token);  // Optionally store the token in local storage
@@ -88,7 +88,7 @@ const LoginModal: FC<LoginModalProps> = ({ isVisible, onClose, onSwitchToRegiste
           setErrorMessage("Please verify your email first. Click here to resend verification email.");
         }
       } else {
-        console.log("Authentication failed");
+        // console.log("Authentication failed");
         setErrorMessage("Wrong username or password");
       }
     })
@@ -103,7 +103,7 @@ const LoginModal: FC<LoginModalProps> = ({ isVisible, onClose, onSwitchToRegiste
     // })
     .catch((error) => {
       setIsLoading(false);  // Stop loading indicator in case of an error
-      console.log("An error occurred:", error);
+      // console.log("An error occurred:", error);
       setErrorMessage(`An error occurred: ${error}`);
     });
   };

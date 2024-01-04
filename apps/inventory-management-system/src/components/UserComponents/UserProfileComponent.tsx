@@ -73,7 +73,7 @@ const UserProfile = () => {
   const { likedStates, handleLikeClick } = useLikeHandler();
   const apiBaseUrl = config.apiBaseUrl || 'http://localhost:3000';
   const { loggedInUserId } = useAuth();
-  console.log("Logged in user ID:", loggedInUserId);
+  // console.log("Logged in user ID:", loggedInUserId);
   useEffect(() => {
     const checkFollowingStatus = async () => {
       // Replace with the actual API call to check if the user is following
@@ -114,9 +114,9 @@ const UserProfile = () => {
     const token = localStorage.getItem('token');
     if (token) {
       const decoded = jwt_decode(token) as { id: string };
-      console.log("Decoded token:", decoded);
+      // console.log("Decoded token:", decoded);
       setFollowerId(decoded.id);
-      console.log('followerId:', decoded.id);
+      // console.log('followerId:', decoded.id);
     }
   }, []);
 
@@ -125,8 +125,8 @@ const UserProfile = () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/api/users?username=${username}`);
         setFolloweeId(response.data._id);
-        console.log('Response data:', response.data);
-        console.log('followeeId:', response.data._id);
+        // console.log('Response data:', response.data);
+        // console.log('followeeId:', response.data._id);
       } catch (error) {
         console.error("Error fetching user ID:", error);
       }
@@ -140,7 +140,7 @@ const UserProfile = () => {
       try {
         const response = await axios.get(`${apiBaseUrl}/api/user/profile/${followeeId}`);
         setUserData(response.data);
-        console.log('User data:', response.data);
+        // console.log('User data:', response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -159,7 +159,7 @@ const UserProfile = () => {
         followerId,
         followeeId,
       });
-      console.log('Followed successfully');
+      // console.log('Followed successfully');
       setIsFollowing(true);
     } catch (error) {
       console.log('Error following user:', error);
@@ -173,7 +173,7 @@ const UserProfile = () => {
         followerId,
         followeeId,
       });
-      console.log('unfollowed successfully');
+      // console.log('unfollowed successfully');
       // If successful, update the state to reflect that the user is no longer following
       setIsFollowing(false);
     } catch (error) {
@@ -202,12 +202,12 @@ const UserProfile = () => {
 
     // This hook is responsible for fetching the user profile and liked moments.
   useEffect(() => {
-    console.log("fetching the user profile and liked moments");
+    // console.log("fetching the user profile and liked moments");
     const fetchUserDataAndLikedMoments = async () => {
       try {
         // Fetch user data including liked moments
         const response = await axios.get(`${apiBaseUrl}/api/user/profile/${followeeId}`);
-        console.log("followeeID", followeeId);
+        // console.log("followeeID", followeeId);
         const user = response.data;
         setUserData(user);
   
@@ -216,7 +216,7 @@ const UserProfile = () => {
           axios.get(`${apiBaseUrl}/moments/${momentId}`)
         );
         const momentsResponses = await Promise.all(momentDetailsPromises);
-        console.log("momentResponse", momentsResponses);
+        // console.log("momentResponse", momentsResponses);
         const momentsDetails = momentsResponses.map((response) => response.data);
         setLikedMomentsDetails(momentsDetails);
       } catch (error) {
@@ -229,7 +229,7 @@ const UserProfile = () => {
     }
   }, [followeeId]);
   useEffect(() => {
-    console.log("Liked Moments Details:",likedMomentsDetails);
+    // console.log("Liked Moments Details:",likedMomentsDetails);
   }, [likedMomentsDetails]);
 
 
@@ -276,7 +276,7 @@ const UserProfile = () => {
   // POST SECTION 
   const fetchUserMoments = async (userId: string) => {
     const token = localStorage.getItem('token');
-    console.log("token", token);
+    // console.log("token", token);
     try {
       const response = await axios.get(`${apiBaseUrl}/moments/${userId}/my-moments`, {
         headers: {
@@ -284,7 +284,7 @@ const UserProfile = () => {
         }
       });
       
-      console.log("This:", `${apiBaseUrl}/moments/${userId}/my-moments`);
+      // console.log("This:", `${apiBaseUrl}/moments/${userId}/my-moments`);
       // Assuming the response contains an array of moments
       setUserPosts(response.data.moments);
     } catch (error) {
@@ -355,9 +355,9 @@ const UserProfile = () => {
   <div className={styles.likedMoments}>
     <ul>
     {[...likedMomentsDetails].reverse().map((item, index) => {
-      console.log(item.moment.likedBy);
+      // console.log(item.moment.likedBy);
       const isLikedByCurrentUser = item.moment.likedBy.some(like => like.userId === loggedInUserId);
-      console.log("Logged in user ID:", loggedInUserId);
+      // console.log("Logged in user ID:", loggedInUserId);
       return (
         <MomentPostComponent 
           key={item.moment._id || index} 

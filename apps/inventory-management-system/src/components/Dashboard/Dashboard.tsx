@@ -295,7 +295,7 @@ const [showPlaceholder, setShowPlaceholder] = useState(true);
 
 
 const handleGifSelect = (gifUrl: string) => {
-  console.log("Selected GIF URL:", gifUrl);
+  // console.log("Selected GIF URL:", gifUrl);
 
   // Set the selected GIF URL in the state
   setPostContent(prevState => ({ ...prevState, gifUrl: gifUrl }));
@@ -340,9 +340,9 @@ const resetForm = () => {
 
 const handleSubmit = async (e: FormEvent) => {
   e.preventDefault();
-  console.log("Current post content:", postContent);
-  console.log("momentDescription to be sent:", postContent.text);
-  console.log("gifUrl to be sent:", postContent.gifUrl);
+  // console.log("Current post content:", postContent);
+  // console.log("momentDescription to be sent:", postContent.text);
+  // console.log("gifUrl to be sent:", postContent.gifUrl);
   const token = localStorage.getItem('token');
   // You already have momentDescription, emotionTag, moodScore, and gifUrl from state
   if (token) {
@@ -374,7 +374,7 @@ const [charCount, setCharCount] = useState(280);
 
 const handleNewContentChange = (event: React.KeyboardEvent<HTMLDivElement>) => {
   const target = event.target as HTMLDivElement; // Explicitly cast to HTMLDivElement
-  console.log("New content:", target.innerText);
+  // console.log("New content:", target.innerText);
   // Extract innerText from the div
   const textContent = (event.target as HTMLDivElement).innerText;
   
@@ -426,10 +426,10 @@ const fetchLastGlobalPostTimestamp = async () => {
   };
 
   const response = await fetch(`${apiBaseUrl}/moments/lastGlobalPostTime`, { headers });
-  console.log("Fetch response:", response);
+  // console.log("Fetch response:", response);
   const data = await response.json();
-  console.log("Fetched timestamp:", data.timestamp);
-  console.log("Parsed response:", data);
+  // console.log("Fetched timestamp:", data.timestamp);
+  // console.log("Parsed response:", data);
   setLastGlobalPostTime(data.timestamp);
 };
 
@@ -467,7 +467,7 @@ useEffect(() => {
   };
 
   const intervalId = setInterval(calculateTimeRemaining, 1000);
-  console.log("Last global post time:", lastGlobalPostTime);
+  // console.log("Last global post time:", lastGlobalPostTime);
   return () => clearInterval(intervalId); // Cleanup on component unmount
   
 }, [lastGlobalPostTime]);
@@ -591,7 +591,7 @@ const lastMomentElementRefRecent = useCallback((node: HTMLDivElement | null) => 
   if (observerRecent.current) observerRecent.current.disconnect();
   observerRecent.current = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting && hasMore) {
-      console.log("Bottom reached, loading more moments");
+      // console.log("Bottom reached, loading more moments");
       fetchMoreRecentMoments();
     }
   });
@@ -610,7 +610,7 @@ const fetchRandomPost = async () => {
     const response = await axios.get(`${apiBaseUrl}/moments/random`, {
       headers: { 'Authorization': token }
     });
-    console.log("Random Post fetched:", response.data);
+    // console.log("Random Post fetched:", response.data);
     setRandomPosts(response.data);
   } catch (error) {
     console.error("Error fetching random moment:", error);

@@ -46,7 +46,7 @@ interface TrendingMoment {
 
 const toggleLikeApiCall = async (momentId: string, token: string | null) => {
   const apiBaseUrl = config.apiBaseUrl;
-  console.log('Token:', token);  // debug line
+  // console.log('Token:', token);  // debug line
 
   if (!token) {
     console.error('No token found');
@@ -60,7 +60,7 @@ const toggleLikeApiCall = async (momentId: string, token: string | null) => {
       }
     });
 
-    console.log("Full API Response:", JSON.stringify(response.data, null, 2)); // debug line
+    // console.log("Full API Response:", JSON.stringify(response.data, null, 2)); // debug line
 
     if (response.data && response.data.message === 'Like status updated') {
       return { success: true, likesCount: response.data.likesCount };
@@ -133,8 +133,8 @@ const RightSidebarComponent = () => {
     const result = await toggleLikeApiCall(momentId, token);
   
     if (result) {
-      console.log('trendingLikes:', trendingLikes);
-      console.log('momentId:', momentId);
+      // console.log('trendingLikes:', trendingLikes);
+      // console.log('momentId:', momentId);
       const likeMoment = trendingLikes.find((m) => m._id === momentId);
       
       if (!likeMoment) {
@@ -170,7 +170,7 @@ const RightSidebarComponent = () => {
     }
   };
   useEffect(() => {
-    console.log("trendingLikes updated:", trendingLikes);
+    // console.log("trendingLikes updated:", trendingLikes);
   }, [trendingLikes]);
   
  
@@ -282,7 +282,7 @@ const debounceTimeout = useRef<NodeJS.Timeout | null>(null);
 useEffect(() => {
   // Websocket connection opened
   ws.addEventListener('open', (event) => {
-    console.log('WebSocket opened:', event);
+    // console.log('WebSocket opened:', event);
   });
 
   // Websocket message received
@@ -295,7 +295,7 @@ useEffect(() => {
 
       if (message.type === 'updateLikes') {
         const { momentId, newLikesCount } = message.data;
-        console.log('Received message:', message);
+        // console.log('Received message:', message);
 
         setTrendingLikes(prevTrendingLikes => {
           return prevTrendingLikes.map(moment => {

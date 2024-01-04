@@ -26,7 +26,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [loggedInUserId, setLoggedInUserId] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const apiBaseUrl = config.apiBaseUrl;
-  console.log('API Base URL:', process.env.REACT_APP_API_BASE_URL);
+  // console.log('API Base URL:', process.env.REACT_APP_API_BASE_URL);
   useEffect(() => {
     const initialToken = localStorage.getItem('token');
     const storedUser = localStorage.getItem('user');
@@ -40,7 +40,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   
         const expirationTime = (decoded as JwtPayload).exp as number;
         setIsAuthenticated(true);
-        console.log("Authentication status set to true");
+        // console.log("Authentication status set to true");
         setToken(initialToken);
   
         const currentTime = Math.floor(Date.now() / 1000);

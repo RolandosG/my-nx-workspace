@@ -11,13 +11,13 @@ export const captureMoment = async (
 ) => {
   try {
     
-    // Log the input variables for debugging
-    console.log(`Sending the following payload: 
-      momentDescription: ${momentDescription}, 
-      emotionTag: ${emotionTag}, 
-      moodScore: ${moodScore}, 
-      gifUrl: ${gifUrl},
-      token: ${token}`);
+    // // Log the input variables for debugging
+    // console.log(`Sending the following payload: 
+    //   momentDescription: ${momentDescription}, 
+    //   emotionTag: ${emotionTag}, 
+    //   moodScore: ${moodScore}, 
+    //   gifUrl: ${gifUrl},
+    //   token: ${token}`);
       
     const payload = {
       momentDescription,
@@ -31,11 +31,11 @@ export const captureMoment = async (
         'Authorization': `${token}`  // Add the Authorization header
       }
     };
-    console.log("Payload about to be sent: ", payload);
+    // console.log("Payload about to be sent: ", payload);
     const response = await axios.post(`${apiBaseUrl}/moments/capture`, payload, config);
     
     if (response.status === 201) {
-      console.log('Moment captured successfully', response.data);
+      // console.log('Moment captured successfully', response.data);
       return true;
     }
   } catch (error: any) {

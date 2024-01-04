@@ -24,7 +24,7 @@ type ProtectedRouteProps = {
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const { isAuthenticated } = useAuth();
   const location = useLocation();
-  console.log("Accessing Protected Route, Auth Status:", isAuthenticated);
+  // console.log("Accessing Protected Route, Auth Status:", isAuthenticated);
   if (!isAuthenticated) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
@@ -35,7 +35,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 
 function App() {
   const [, setTheme] = useRecoilState(themeState);
-  console.log('process.env: ',process.env);
+  // console.log('process.env: ',process.env);
   
 // ProtectedRoute Component
 

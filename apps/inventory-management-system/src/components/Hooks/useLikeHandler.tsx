@@ -7,7 +7,7 @@ const useLikeHandler = () => {
   const [likesCount, setLikesCount] = useState<Record<string, number>>({});
   const apiBaseUrl = config.apiBaseUrl;
   const handleLikeClick = async (postId: string) => {
-    console.log("HandleLikeClick is called");
+    // console.log("HandleLikeClick is called");
     const token = localStorage.getItem('token'); 
     if (!token) {
       console.error('No token found');
