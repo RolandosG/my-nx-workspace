@@ -308,7 +308,7 @@ const handleContentChange = (e: React.KeyboardEvent<HTMLDivElement>) => {
 
 const handleSearchChange = async (event: ChangeEvent<HTMLInputElement>) => {
   const searchTerm = event.target.value;
-  const apiKey = process.env.REACT_APP_GIPHY_API_KEY; // Replace with your GIPHY API key
+  const apiKey = process.env.REACT_APP_GIPHY_API_KEY;
 
   try {
     const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchTerm}&limit=10`);
