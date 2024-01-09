@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import LoginModal from '../../AuthenticationComponents/LoginModal/LoginComponent';
+import LoginModal from './LoginComponent';
 import RegisterModal from '../../RegisterComponents/RegisterModal';
-import { useAuth } from '../../AuthenticationComponents/AuthContext';
+import { useAuth } from '../AuthContext';
 import { useLocation, useNavigate } from 'react-router-dom';
-import styles from '../LoginModal/LoginPageWithMap.module.scss';
+import styles from './LoginPageWithMap.module.scss';
 import earthGif from '../../../assets/gifs/earth gif.gif'
 
 const LoginPage = () => {
