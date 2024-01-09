@@ -115,3 +115,237 @@ To fix this, set a unique name for each project in a project.json inside the pro
 [NX Daemon Server] - 2024-01-04T07:36:51.846Z - Time taken for 'hash changed files from watcher' 0.09719991683959961ms
 [NX Daemon Server] - 2024-01-04T07:36:51.847Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-01-04T07:36:51.847Z - Done responding to the client null
+[NX Daemon Server] - 2024-01-09T20:38:42.050Z - Started listening on: \\.\pipe\nx\C:\Users\Rolandos\AppData\Local\Temp\321e1be08a5836901053\d.sock
+[NX Daemon Server] - 2024-01-09T20:38:42.053Z - [WATCHER]: Subscribed to changes within: c:\Users\Rolandos\Desktop\APPS\my-nx-workspace (native)
+[NX Daemon Server] - 2024-01-09T20:38:42.065Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-09T20:38:42.066Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-01-09T20:38:42.067Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-09T20:38:42.069Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-09T20:38:42.185Z - Error detected when recomputing project file map: The following projects are defined in multiple locations:
+- my-nx-workspace-e2e: 
+  - vast-cove-09686/apps/my-nx-workspace-e2e
+  - apps/my-nx-workspace-e2e
+- personal-finance-tracker: 
+  - vast-cove-09686/apps/personal-finance-tracker
+  - apps/personal-finance-tracker
+- personal-finance-tracker-e2e: 
+  - vast-cove-09686/apps/personal-finance-tracker-e2e
+  - apps/personal-finance-tracker-e2e
+- my-nx-workspace: 
+  - vast-cove-09686/apps/my-nx-workspace
+  - apps/my-nx-workspace
+- inventory-management-system-api-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-api-e2e
+  - apps/inventory-management-system-api-e2e
+- game-website-e2e: 
+  - vast-cove-09686/apps/game-website-e2e
+  - apps/game-website-e2e
+- game-website: 
+  - vast-cove-09686/apps/game-website
+  - apps/game-website
+- inventory-management-system: 
+  - vast-cove-09686/apps/inventory-management-system
+  - apps/inventory-management-system
+- inventory-management-system-api: 
+  - vast-cove-09686/apps/inventory-management-system-api
+  - apps/inventory-management-system-api
+- inventory-management-system-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-e2e
+  - apps/inventory-management-system-e2e
+
+To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+[NX Daemon Server] - 2024-01-09T20:38:42.255Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. The following projects are defined in multiple locations:
+- my-nx-workspace-e2e: 
+  - vast-cove-09686/apps/my-nx-workspace-e2e
+  - apps/my-nx-workspace-e2e
+- personal-finance-tracker: 
+  - vast-cove-09686/apps/personal-finance-tracker
+  - apps/personal-finance-tracker
+- personal-finance-tracker-e2e: 
+  - vast-cove-09686/apps/personal-finance-tracker-e2e
+  - apps/personal-finance-tracker-e2e
+- my-nx-workspace: 
+  - vast-cove-09686/apps/my-nx-workspace
+  - apps/my-nx-workspace
+- inventory-management-system-api-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-api-e2e
+  - apps/inventory-management-system-api-e2e
+- game-website-e2e: 
+  - vast-cove-09686/apps/game-website-e2e
+  - apps/game-website-e2e
+- game-website: 
+  - vast-cove-09686/apps/game-website
+  - apps/game-website
+- inventory-management-system: 
+  - vast-cove-09686/apps/inventory-management-system
+  - apps/inventory-management-system
+- inventory-management-system-api: 
+  - vast-cove-09686/apps/inventory-management-system-api
+  - apps/inventory-management-system-api
+- inventory-management-system-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-e2e
+  - apps/inventory-management-system-e2e
+
+To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+Error: The following projects are defined in multiple locations:
+- my-nx-workspace-e2e: 
+  - vast-cove-09686/apps/my-nx-workspace-e2e
+  - apps/my-nx-workspace-e2e
+- personal-finance-tracker: 
+  - vast-cove-09686/apps/personal-finance-tracker
+  - apps/personal-finance-tracker
+- personal-finance-tracker-e2e: 
+  - vast-cove-09686/apps/personal-finance-tracker-e2e
+  - apps/personal-finance-tracker-e2e
+- my-nx-workspace: 
+  - vast-cove-09686/apps/my-nx-workspace
+  - apps/my-nx-workspace
+- inventory-management-system-api-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-api-e2e
+  - apps/inventory-management-system-api-e2e
+- game-website-e2e: 
+  - vast-cove-09686/apps/game-website-e2e
+  - apps/game-website-e2e
+- game-website: 
+  - vast-cove-09686/apps/game-website
+  - apps/game-website
+- inventory-management-system: 
+  - vast-cove-09686/apps/inventory-management-system
+  - apps/inventory-management-system
+- inventory-management-system-api: 
+  - vast-cove-09686/apps/inventory-management-system-api
+  - apps/inventory-management-system-api
+- inventory-management-system-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-e2e
+  - apps/inventory-management-system-e2e
+
+To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+    at readProjectConfigurationsFromRootMap (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\project-configuration-utils.js:106:15)
+    at buildProjectsConfigurationsFromProjectPathsAndPlugins (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\project-configuration-utils.js:78:19)
+    at createProjectConfigurations (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\retrieve-workspace-files.js:142:129)
+    at c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\retrieve-workspace-files.js:91:39
+    at _retrieveProjectConfigurations (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\retrieve-workspace-files.js:90:12)
+    at c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\retrieve-workspace-files.js:61:16
+    at Generator.next (<anonymous>)
+    at fulfilled (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\tslib\tslib.js:166:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[NX Daemon Server] - 2024-01-09T20:38:42.258Z - Time taken for 'hash changed files from watcher' 0.07860004901885986ms
+[NX Daemon Server] - 2024-01-09T20:38:42.258Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-09T20:38:42.259Z - Done responding to the client null
+[NX Daemon Server] - 2024-01-09T20:38:44.078Z - Started listening on: \\.\pipe\nx\C:\Users\Rolandos\AppData\Local\Temp\321e1be08a5836901053\d.sock
+[NX Daemon Server] - 2024-01-09T20:38:44.081Z - [WATCHER]: Subscribed to changes within: c:\Users\Rolandos\Desktop\APPS\my-nx-workspace (native)
+[NX Daemon Server] - 2024-01-09T20:38:44.089Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-09T20:38:44.091Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-01-09T20:38:44.091Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-01-09T20:38:44.093Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-01-09T20:38:44.221Z - Error detected when recomputing project file map: The following projects are defined in multiple locations:
+- personal-finance-tracker-e2e: 
+  - vast-cove-09686/apps/personal-finance-tracker-e2e
+  - apps/personal-finance-tracker-e2e
+- inventory-management-system-api-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-api-e2e
+  - apps/inventory-management-system-api-e2e
+- inventory-management-system-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-e2e
+  - apps/inventory-management-system-e2e
+- my-nx-workspace-e2e: 
+  - vast-cove-09686/apps/my-nx-workspace-e2e
+  - apps/my-nx-workspace-e2e
+- my-nx-workspace: 
+  - vast-cove-09686/apps/my-nx-workspace
+  - apps/my-nx-workspace
+- personal-finance-tracker: 
+  - vast-cove-09686/apps/personal-finance-tracker
+  - apps/personal-finance-tracker
+- inventory-management-system-api: 
+  - vast-cove-09686/apps/inventory-management-system-api
+  - apps/inventory-management-system-api
+- game-website-e2e: 
+  - vast-cove-09686/apps/game-website-e2e
+  - apps/game-website-e2e
+- inventory-management-system: 
+  - vast-cove-09686/apps/inventory-management-system
+  - apps/inventory-management-system
+- game-website: 
+  - vast-cove-09686/apps/game-website
+  - apps/game-website
+
+To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+[NX Daemon Server] - 2024-01-09T20:38:44.275Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. The following projects are defined in multiple locations:
+- personal-finance-tracker-e2e: 
+  - vast-cove-09686/apps/personal-finance-tracker-e2e
+  - apps/personal-finance-tracker-e2e
+- inventory-management-system-api-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-api-e2e
+  - apps/inventory-management-system-api-e2e
+- inventory-management-system-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-e2e
+  - apps/inventory-management-system-e2e
+- my-nx-workspace-e2e: 
+  - vast-cove-09686/apps/my-nx-workspace-e2e
+  - apps/my-nx-workspace-e2e
+- my-nx-workspace: 
+  - vast-cove-09686/apps/my-nx-workspace
+  - apps/my-nx-workspace
+- personal-finance-tracker: 
+  - vast-cove-09686/apps/personal-finance-tracker
+  - apps/personal-finance-tracker
+- inventory-management-system-api: 
+  - vast-cove-09686/apps/inventory-management-system-api
+  - apps/inventory-management-system-api
+- game-website-e2e: 
+  - vast-cove-09686/apps/game-website-e2e
+  - apps/game-website-e2e
+- inventory-management-system: 
+  - vast-cove-09686/apps/inventory-management-system
+  - apps/inventory-management-system
+- game-website: 
+  - vast-cove-09686/apps/game-website
+  - apps/game-website
+
+To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+Error: The following projects are defined in multiple locations:
+- personal-finance-tracker-e2e: 
+  - vast-cove-09686/apps/personal-finance-tracker-e2e
+  - apps/personal-finance-tracker-e2e
+- inventory-management-system-api-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-api-e2e
+  - apps/inventory-management-system-api-e2e
+- inventory-management-system-e2e: 
+  - vast-cove-09686/apps/inventory-management-system-e2e
+  - apps/inventory-management-system-e2e
+- my-nx-workspace-e2e: 
+  - vast-cove-09686/apps/my-nx-workspace-e2e
+  - apps/my-nx-workspace-e2e
+- my-nx-workspace: 
+  - vast-cove-09686/apps/my-nx-workspace
+  - apps/my-nx-workspace
+- personal-finance-tracker: 
+  - vast-cove-09686/apps/personal-finance-tracker
+  - apps/personal-finance-tracker
+- inventory-management-system-api: 
+  - vast-cove-09686/apps/inventory-management-system-api
+  - apps/inventory-management-system-api
+- game-website-e2e: 
+  - vast-cove-09686/apps/game-website-e2e
+  - apps/game-website-e2e
+- inventory-management-system: 
+  - vast-cove-09686/apps/inventory-management-system
+  - apps/inventory-management-system
+- game-website: 
+  - vast-cove-09686/apps/game-website
+  - apps/game-website
+
+To fix this, set a unique name for each project in a project.json inside the project's root. If the project does not currently have a project.json, you can create one that contains only a name.
+    at readProjectConfigurationsFromRootMap (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\project-configuration-utils.js:106:15)
+    at buildProjectsConfigurationsFromProjectPathsAndPlugins (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\project-configuration-utils.js:78:19)
+    at createProjectConfigurations (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\retrieve-workspace-files.js:142:129)
+    at c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\retrieve-workspace-files.js:91:39
+    at _retrieveProjectConfigurations (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\retrieve-workspace-files.js:90:12)
+    at c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\nx\src\project-graph\utils\retrieve-workspace-files.js:61:16
+    at Generator.next (<anonymous>)
+    at fulfilled (c:\Users\Rolandos\Desktop\APPS\my-nx-workspace\node_modules\tslib\tslib.js:166:62)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[NX Daemon Server] - 2024-01-09T20:38:44.277Z - Time taken for 'hash changed files from watcher' 0.10150003433227539ms
+[NX Daemon Server] - 2024-01-09T20:38:44.278Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-01-09T20:38:44.279Z - Done responding to the client null
